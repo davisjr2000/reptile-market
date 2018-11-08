@@ -1,7 +1,7 @@
 <div class="navbar-wagon">
   <!-- Logo -->
   <%= link_to root_path, class: "navbar-wagon-brand" do %>
-    <%= image_tag "chamaleon.png", height: 50 %>
+    <%= image_tag "pokeball2.png", height: 50 %>
   <% end %>
 
   <!-- Right Navigation -->
@@ -10,8 +10,8 @@
     <% if user_signed_in? %>
 
       <!-- Links when logged in -->
-      <%= link_to "Reptiles", "#", class: "navbar-wagon-item navbar-wagon-link" %>
-      <%= link_to "Sell Reptile", reptiles_new_path, class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to "Pokémons", "#", class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to "Sell Pokémon", reptiles_new_path, class: "navbar-wagon-item navbar-wagon-link" %>
       <%= link_to "Messages", "#", class: "navbar-wagon-item navbar-wagon-link" %>
 
       <!-- Avatar with dropdown menu -->

@@ -1,6 +1,6 @@
-<div class="banner" style="background-image: linear-gradient(-225deg, rgba(25, 104, 10,0.3) 0%, rgba(64, 140, 49,0.3) 50%), url('https://www.wsbradio.com/rf/image_lowres/Pub/p9/CmgSharedContent/2018/05/31/Videos/4406404.vpx');">
+<div class="banner" style="background-image: linear-gradient(-225deg, rgba(25, 104, 10,0.3) 0%, rgba(64, 140, 49,0.3) 50%), url('https://cdn.gamerant.com/wp-content/uploads/pikachu-joshua-realistic-pokemon.jpg.optimal.jpg');">
   <div class="banner-content">
-    <h1>Reptilia Store</h1>
+    <h1>Poké Store</h1>
     <h4>Find your pall here</h4>
     <a class="btn btn-success btn-lg">Start now</a>
   </div>
@@ -11,7 +11,7 @@
       <% @reptiles.each do |reptile| %>
         <%= link_to reptile do %>
           <div class="col-xs-12 col-sm-4">
-            <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://kitt.lewagon.com/placeholder/cities/shanghai');">
+            <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path reptile.photo %>');">
             <div class="card-category">$ <%= reptile.price %></div>
             <div class="card-description">
               <h2><%= reptile.name %></h2>
