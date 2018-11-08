@@ -35,6 +35,6 @@ class ReptilesController < ApplicationController
   end
 
   def reptile_params
-    params.require(:reptile).permit(:name, :species, :user_id, :age, :price, :weight, :size, :description )
+    params.require(:reptile).permit(:name, :species, :user_id, :age, :price, :weight, :size, :description, :photo )
   end
 end
