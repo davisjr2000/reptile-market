@@ -1,2 +1,27 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="banner" style="background-image: linear-gradient(-225deg, rgba(25, 104, 10,0.3) 0%, rgba(64, 140, 49,0.3) 50%), url('https://www.wsbradio.com/rf/image_lowres/Pub/p9/CmgSharedContent/2018/05/31/Videos/4406404.vpx');">
+  <div class="banner-content">
+    <h1>Reptilia Store</h1>
+    <h4>Find your pall here</h4>
+    <a class="btn btn-success btn-lg">Start now</a>
+  </div>
+</div>
+  <h2 class="text-center"> Your new best friend </h2>
+  <div class="container">
+    <div class="row">
+      <% @reptiles.each do |reptile| %>
+        <%= link_to reptile do %>
+          <div class="col-xs-12 col-sm-4">
+            <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://kitt.lewagon.com/placeholder/cities/shanghai');">
+            <div class="card-category">$ <%= reptile.price %></div>
+            <div class="card-description">
+              <h2><%= reptile.name %></h2>
+              <p><em><%= reptile.species %></em></p>
+            </div>
+            <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/tgenaitay">
+
+          </div>
+          </div>
+        <% end %>
+      <% end %>
+  </div>
+</div>
