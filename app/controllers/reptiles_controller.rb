@@ -11,6 +11,12 @@ class ReptilesController < ApplicationController
     @reptiles = Reptile.where(user: current_user)
   end
 
+  def buy
+    @reptile = Reptile.find(params[:reptile_id])
+    @reptile.user = current_user
+    @reptile.save
+  end
+
   def show
     @reptile = Reptile.find(params[:id])
   end
