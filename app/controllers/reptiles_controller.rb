@@ -7,6 +7,10 @@ class ReptilesController < ApplicationController
     end
   end
 
+  def my
+    @reptiles = Reptile.where(user: current_user)
+  end
+
   def show
     @reptile = Reptile.find(params[:id])
   end
