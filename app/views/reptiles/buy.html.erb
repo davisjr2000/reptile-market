@@ -1,3 +1,8 @@
-<div class="container">
+<div class="container text-center">
   <h1> Thank you for purchasing <%= @reptile.name %>! </h1>
+  <%= cl_image_tag @reptile.photo, height: 450, width: 650, crop: :fill %>
+  <h2> We are sure it will be very happy to be your Pokémon <%= image_tag("pokeball2.png", style:"width:50px") %></h2>
+  <div class="btn btn-success btn-lg ">
+    <%= link_to "My Pokémons", my_path, class: "btn btn-lg my_p" %>
+  </div>
 </div>

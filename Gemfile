@@ -8,7 +8,7 @@ gem 'pg', '~> 0.21'
 gem 'puma'
 gem 'rails', '5.2.1'
 gem 'redis'
-
+gem 'pg_search'
 gem 'cloudinary'
 gem 'carrierwave', '~> 1.2'
 gem 'dotenv-rails', groups: [:development, :test]

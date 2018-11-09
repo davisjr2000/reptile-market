@@ -1,9 +1,9 @@
 class ReptilesController < ApplicationController
   def index
-    if [:query].empty?
+    if params[:query].nil? || params[:query].empty?
       @reptiles = Reptile.all
     else
-      @reptiles = Reptile.where("name ILIKE ?", "%#{params[:query]}%")
+      @reptiles = Reptile.search_by_name_and_element(params[:query])
     end
   end
 

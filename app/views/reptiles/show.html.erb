@@ -17,7 +17,9 @@
         method: :delete,
         data: { confirm: "Are you sure?" } %></h3>
       <% else %>
-        <a class="btn btn-success">BUY</a>
+        <div class="btn btn-success">
+          <%= link_to "BUY", reptile_buy_path(@reptile), class: "btn my_p" %>
+        </div>
       <% end %>
     </div>
   </div>
