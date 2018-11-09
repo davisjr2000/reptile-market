@@ -1,15 +1,21 @@
 <div class="container">
   <div class ="row">
-    <div class="col-xs-6">
+    <div class="col-xs-7">
       <br>
-      <%= cl_image_tag @reptile.photo, height: 450, width: 550, crop: :fill %>
+      <%= cl_image_tag @reptile.photo, height: 450, width: 650, crop: :fill %>
     </div>
-    <div class="col-xs-6">
-      <br>
-      <h1><strong><%= @reptile.name %></strong></h1>
-      <h2><em><%= @reptile.species %></em></h2>
-      <h4>$ <%= @reptile.price %></h4>
-      <h5><strong>Description:</strong> <%= @reptile.description %></h5>
+    <div class="col-xs-5">
+      <h1><strong><%= @reptile.name %></strong> <img src="https://cdn4.iconfinder.com/data/icons/oakcons-2/16/Pokeball-512.png" style="height: 50px; margin-bottom: 5px;"></h1>
+      <h3><i class="far fa-user"></i> <%= @reptile.user.email.split("@")[0] %></h3>
+      <h2>Level <%= @reptile.level %></h2>
+      <h3><%= @reptile.element %> Type</h3>
+      <h3>$ <%= @reptile.price %></h3>
+      <h5><strong><i class="fas fa-align-left"></i> Description:</strong> <%= @reptile.description %></h5>
+      <% if @reptile.user == current_user %>
+        <h3><%= link_to "Edit Info | ", edit_reptile_path(@reptile) %><%= link_to "Remove From Store", reptile_path(@reptile),
+        method: :delete,
+        data: { confirm: "Are you sure?" } %></h3>
+      <% end %>
     </div>
   </div>
 </div>

@@ -2,26 +2,33 @@
   <div class="banner-content">
     <h1>Poké Store</h1>
     <h4>Find your pall here</h4>
+    <%= form_tag reptiles_path, method: :get do %>
+    <%= text_field_tag :query,
+      params[:query],
+      class: "form-control",
+      placeholder: ""%>
+<% end %>
     <a class="btn btn-success btn-lg">Start now</a>
   </div>
 </div>
-  <h2 class="text-center"> Your new best friend </h2>
+  <h2 class="text-center"> Meet your new Pokémon </h2>
   <div class="container">
     <div class="row">
-      <% @reptiles.each do |reptile| %>
+      <% @reptiles.shuffle.first(6).each do |reptile| %>
         <%= link_to reptile do %>
           <div class="col-xs-12 col-sm-4">
-            <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path reptile.photo %>');">
+            <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path reptile.photo %>'); margin-bottom:30px;">
             <div class="card-category">$ <%= reptile.price %></div>
             <div class="card-description">
               <h2><%= reptile.name %></h2>
-              <p><em><%= reptile.species %></em></p>
+              <p><em>Level <%= reptile.level %></em></p>
             </div>
-            <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/tgenaitay">
-
+            <img class="card-user" src="https://i.kym-cdn.com/photos/images/original/001/152/404/fec.png">
           </div>
           </div>
         <% end %>
-      <% end %>
+    <% end %>
   </div>
 </div>
+<br>
+

@@ -1,5 +1,10 @@
 class ReptilesController < ApplicationController
   def index
+    if [:query].empty?
+      @reptiles = Reptile.all
+    else
+      @reptiles = Reptile.where("name ILIKE ?", "%#{params[:query]}%")
+    end
   end
 
   def show
@@ -32,9 +37,12 @@ class ReptilesController < ApplicationController
   end
 
   def destroy
+    reptile = Reptile.find(params[:id])
+    reptile.destroy
+    redirect_to root_path
   end
 
   def reptile_params
-    params.require(:reptile).permit(:name, :species, :user_id, :price, :level, :description, :photo)
+    params.require(:reptile).permit(:name, :element, :user_id, :price, :description, :level, :photo)
   end
 end

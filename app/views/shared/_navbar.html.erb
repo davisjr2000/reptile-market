@@ -6,11 +6,17 @@
 
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
+    <%= form_tag reptiles_path, method: :get do %>
+      <%= text_field_tag :query,
+        params[:query],
+        class: "form-control search",
+        placeholder: "Search Pokémon"%>
+    <% end %>
 
     <% if user_signed_in? %>
 
       <!-- Links when logged in -->
-      <%= link_to "Pokémons", "#", class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to "Pokémons", reptiles_path, class: "navbar-wagon-item navbar-wagon-link" %>
       <%= link_to "Sell Pokémon", reptiles_new_path, class: "navbar-wagon-item navbar-wagon-link" %>
       <%= link_to "Messages", "#", class: "navbar-wagon-item navbar-wagon-link" %>
 
