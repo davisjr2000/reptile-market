@@ -11,8 +11,19 @@ class ReptilesController < ApplicationController
     @reptiles = Reptile.where(user: current_user)
   end
 
+  def transactions
+    @trans_rep = []
+    @reptiles = Reptile.where(user: current_user)
+    @reptiles = @reptiles.each do |poke|
+      if !poke.old.nil? && poke.old != current_user.email
+        @trans_rep << poke
+      end
+    end
+  end
+
   def buy
     @reptile = Reptile.find(params[:reptile_id])
+    @reptile.old = @reptile.user.email
     @reptile.user = current_user
     @reptile.save
   end
@@ -53,6 +64,6 @@ class ReptilesController < ApplicationController
   end
 
   def reptile_params
-    params.require(:reptile).permit(:name, :element, :user_id, :price, :description, :level, :photo)
+    params.require(:reptile).permit(:name, :element, :user_id, :price, :description, :old, :level, :photo)
   end
 end
