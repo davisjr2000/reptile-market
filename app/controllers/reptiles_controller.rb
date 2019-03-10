@@ -48,6 +48,7 @@ class ReptilesController < ApplicationController
   end
 
   def edit
+    redirect_to root_path
     @reptile = Reptile.find(params[:id])
   end
 

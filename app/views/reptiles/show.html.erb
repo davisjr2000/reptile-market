@@ -12,7 +12,7 @@
       <h3><%= @reptile.element %> Type</h3>
       <h3>$ <%= @reptile.price %></h3>
       <h5><strong><i class="fas fa-align-left"></i> Description:</strong> <%= @reptile.description %></h5>
-      <% if @reptile.user == current_user %>
+      <% if @reptile.user == current_user && false %>
         <h3><%= link_to "Edit Info | ", edit_reptile_path(@reptile) %><%= link_to "Remove From Store", reptile_path(@reptile),
         method: :delete,
         data: { confirm: "Are you sure?" } %></h3>
