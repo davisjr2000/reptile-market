@@ -1,4 +1,5 @@
 class ReptilesController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:index, :show]
   def index
     if params[:query].nil? || params[:query].empty?
       @reptiles = Reptile.all
